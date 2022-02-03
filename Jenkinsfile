@@ -4,7 +4,7 @@ pipeline {
         stage('Verify') {
             steps {
                 sh '''
-                  python --version
+                  python3 --version
                 '''
                 sh 'printenv'
                 sh 'ls -l "$WORKSPACE"'
