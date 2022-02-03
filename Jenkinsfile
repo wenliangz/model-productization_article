@@ -1,42 +1,43 @@
 pipeline {
-    agent {
-        docker {
-            image 'mcr.microsoft.com/dotnet/core/sdk:3.1.101'
-        }
-    }
-    environment {
-        HOME = '/tmp'
-    } 
+    agent any
     stages {
         stage('Verify') {
             steps {
                 sh '''
-                  dotnet --list-sdks
-                  dotnet --list-runtimes
+                  python --version
                 '''
                 sh 'printenv'
                 sh 'ls -l "$WORKSPACE"'
             }
         }
-        stage('Build') {
-            steps {
-                sh 'dotnet build "$WORKSPACE/m4/src/Pi.Web/Pi.Web.csproj"'
-            }
-        }
         stage('Unit Test') {
             steps {
-              dir("$WORKSPACE/m4/src") {
                 sh '''
-                    dotnet test Pi.Math.Tests/Pi.Math.Tests.csproj
-                    dotnet test Pi.Runtime.Tests/Pi.Runtime.Tests.csproj
+                    pytest
                 '''
-              }
             }
         }
-        stage('Smoke Test') {
+        stage('ETL') {
             steps {
-              sh 'dotnet "$WORKSPACE/m4/src/Pi.Web/bin/Debug/netcoreapp3.1/Pi.Web.dll"'
+                sh '''
+                    python3 ./scripts/etl.py
+                '''
             }
         }
+        stage('Train') {
+            steps {
+                sh '''
+                    python3 ./scripts/train.py
+                '''
+            }
+        }
+        stage('Predict') {
+            steps {
+                sh '''
+                    python3 ./scripts/predict.py
+                '''
+            }
+        }
+
     }
 }
