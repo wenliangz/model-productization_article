@@ -13,7 +13,7 @@ pipeline {
         stage('Unit Test') {
             steps {
                 sh '''
-                    pytest
+                    python3 -m pytest
                 '''
             }
         }
