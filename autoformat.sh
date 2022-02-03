@@ -1,4 +1,3 @@
-  
 #/bin/bash
 #
 # If you get permission error, you can try
