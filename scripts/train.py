@@ -15,7 +15,7 @@ import pandas as pd
 import sklearn
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_val_score
-from scripts.utility import load_data, parse_config, set_logger
+from utility import load_data, parse_config, set_logger
 
 
 @click.command()
