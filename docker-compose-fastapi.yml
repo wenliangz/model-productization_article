@@ -8,6 +8,6 @@ services:
     volumes:
       - ./model:/app/model
     ports:
-      - 8000:8000
+      - 8100:8100
     command: uvicorn api_main:app --reload --host 0.0.0.0
 
