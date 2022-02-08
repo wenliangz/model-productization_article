@@ -38,6 +38,13 @@ pipeline {
                 '''
             }
         }
+        stage('Deploy') {
+            steps {
+                sh '''
+                    docker-compose -f docker-compose-fastapi.yml up --build
+                '''
+            }
+        }
 
     }
 }

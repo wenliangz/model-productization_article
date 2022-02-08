@@ -21,7 +21,7 @@ import numpy as np
 from fastapi import FastAPI, Query
 from pydantic import BaseModel
 
-from api_utility import Predictor
+from scripts.api_utility import Predictor
 
 
 ##################

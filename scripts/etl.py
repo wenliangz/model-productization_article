@@ -11,12 +11,10 @@ Usage:
 
 import logging
 from pathlib import Path
-
 import click
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
-
 from utility import parse_config, set_logger
 
 

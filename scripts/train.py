@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 """
 This script is used to train and export ML model according to config
 
@@ -9,16 +8,13 @@ Usage:
 """
 import logging
 from pathlib import Path
-
 # from cloudpickle import dump
 from pickle import dump
-
 import click
 import pandas as pd
 import sklearn
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_val_score
-
 from utility import load_data, parse_config, set_logger
 
 

@@ -1,19 +1,8 @@
-pytest==6.0.1
-pandas==1.4.0
-Click==7.0
 scikit-learn==1.0.2
-black==19.10b0
-isort==4.3.21
-PyYAML==5.4
-requests==2.20.1
-
-# for FastAPI
 fastapi==0.65.2
 uvicorn==0.11.8
-
+numpy
+pydantic
 # idk why, an error comes out when I run pytest, installing chardet fixes the issue
 # https://github.com/HazyResearch/pdftotree/issues/47
 chardet==3.0.4
-
-# for parallel pytest
-# pytest-xdist==2.0.0

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 """
 This script is used to do prediction based on trained model
 
@@ -9,22 +8,19 @@ Usage:
 """
 import logging
 from pathlib import Path
-
 # from cloudpickle import load
 from pickle import load
-
 import click
 import pandas as pd
 import sklearn
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 from sklearn.model_selection import cross_val_score
-
 from utility import load_data, parse_config, set_logger
 
 
 @click.command()
-@click.argument("config_file", type=str, default="scripts/config.yml")
+@click.argument("config_file", type=str, default="configs/config.yml")
 def predict(config_file):
     """
     Main function that runs predictions
