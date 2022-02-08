@@ -3,7 +3,7 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from scripts.api_main import app
+from api_main import app
 from mock_data import *
 
 #############################################

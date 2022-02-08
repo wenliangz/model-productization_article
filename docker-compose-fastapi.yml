@@ -9,5 +9,5 @@ services:
       - ./model:/app/model
     ports:
       - 8000:8000
-    command: uvicorn scripts.api_main:app --reload --host 0.0.0.0
+    command: uvicorn api_main:app --reload --host 0.0.0.0
 
