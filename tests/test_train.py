@@ -1,7 +1,7 @@
 import pytest
 import sklearn
 
-from train import initiate_model
+from scripts.train import initiate_model
 
 
 def test_initiate_model():
