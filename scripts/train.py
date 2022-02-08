@@ -19,7 +19,7 @@ from scripts.utility import load_data, parse_config, set_logger
 
 
 @click.command()
-@click.argument("config_file", type=str, default="scripts/config.yml")
+@click.argument("config_file", type=str, default="configs/config.yml")
 def train(config_file):
     """
     Main function that trains & persists model based on training set

@@ -19,7 +19,7 @@ from utility import parse_config, set_logger
 
 
 @click.command()
-@click.argument("config_file", type=str, default="scripts/config.yml")
+@click.argument("config_file", type=str, default="configs/config.yml")
 def etl(config_file):
     """
     ETL function that load raw data and convert to train and test set
