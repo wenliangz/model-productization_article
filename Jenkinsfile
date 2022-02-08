@@ -20,21 +20,24 @@ pipeline {
         stage('ETL') {
             steps {
                 sh '''
-                    python3 ./scripts/etl.py
+                    cd scripts
+                    python3 etl.py
                 '''
             }
         }
         stage('Train') {
             steps {
                 sh '''
-                    python3 ./scripts/train.py
+                    cd scripts
+                    python3 train.py
                 '''
             }
         }
         stage('Predict') {
             steps {
                 sh '''
-                    python3 ./scripts/predict.py
+                    cd scripts
+                    python3 predict.py
                 '''
             }
         }
