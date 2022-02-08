@@ -24,20 +24,20 @@ pipeline {
                 '''
             }
         }
-        stage('Train') {
-            steps {
-                sh '''
-                    python3 ./scripts/train.py
-                '''
-            }
-        }
-        stage('Predict') {
-            steps {
-                sh '''
-                    python3 ./scripts/predict.py
-                '''
-            }
-        }
+//         stage('Train') {
+//             steps {
+//                 sh '''
+//                     python3 ./scripts/train.py
+//                 '''
+//             }
+//         }
+//         stage('Predict') {
+//             steps {
+//                 sh '''
+//                     python3 ./scripts/predict.py
+//                 '''
+//             }
+//         }
         stage('Deploy') {
             steps {
                 sh '''
