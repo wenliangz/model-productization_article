@@ -13,31 +13,31 @@ pipeline {
         stage('Unit Test') {
             steps {
                 sh '''
-                    python3 -m pytest
+                    python3 -m pytest tests/
                 '''
             }
         }
-//         stage('ETL') {
-//             steps {
-//                 sh '''
-//                     python3 ./scripts/etl.py
-//                 '''
-//             }
-//         }
-//         stage('Train') {
-//             steps {
-//                 sh '''
-//                     python3 ./scripts/train.py
-//                 '''
-//             }
-//         }
-//         stage('Predict') {
-//             steps {
-//                 sh '''
-//                     python3 ./scripts/predict.py
-//                 '''
-//             }
-//         }
+        stage('ETL') {
+            steps {
+                sh '''
+                    python3 ./scripts/etl.py
+                '''
+            }
+        }
+        stage('Train') {
+            steps {
+                sh '''
+                    python3 ./scripts/train.py
+                '''
+            }
+        }
+        stage('Predict') {
+            steps {
+                sh '''
+                    python3 ./scripts/predict.py
+                '''
+            }
+        }
         stage('Deploy') {
             steps {
                 sh '''
