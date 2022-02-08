@@ -2,6 +2,7 @@ version: '3'
 
 services:
   fastapi:
+    image: wenliang/fastapi-wine-prediction:22.08
     build:
       context: .
       dockerfile: dockers/fastapi/Dockerfile

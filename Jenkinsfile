@@ -20,21 +20,21 @@ pipeline {
         stage('ETL') {
             steps {
                 sh '''
-                    python3 etl.py
+                    docker-compose -f docker-compose-etl.yml up
                 '''
             }
         }
         stage('Train') {
             steps {
                 sh '''
-                    python3 train.py
+                    docker-compose -f docker-compose-train.yml up
                 '''
             }
         }
-        stage('Predict') {
+        stage('predict') {
             steps {
                 sh '''
-                    python3 predict.py
+                    docker-compose -f docker-compose-predict.yml up
                 '''
             }
         }
