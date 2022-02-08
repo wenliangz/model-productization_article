@@ -17,13 +17,13 @@ pipeline {
                 '''
             }
         }
-        stage('ETL') {
-            steps {
-                sh '''
-                    python3 ./scripts/etl.py
-                '''
-            }
-        }
+//         stage('ETL') {
+//             steps {
+//                 sh '''
+//                     python3 ./scripts/etl.py
+//                 '''
+//             }
+//         }
 //         stage('Train') {
 //             steps {
 //                 sh '''
