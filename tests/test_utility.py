@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from utilities.utility import load_data
+from scripts.utility import load_data
 
 
 def test_load_data():

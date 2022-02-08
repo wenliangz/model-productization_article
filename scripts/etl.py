@@ -15,7 +15,7 @@ import click
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
-from ..utilities.utility import parse_config, set_logger
+from utility import parse_config, set_logger
 
 
 @click.command()

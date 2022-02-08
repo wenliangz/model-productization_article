@@ -17,7 +17,7 @@ from pickle import load
 import pytest
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 
-from utilities.api_utility import Predictor
+from scripts.api_utility import Predictor
 
 
 def test_init():
